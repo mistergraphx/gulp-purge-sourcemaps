@@ -17,7 +17,6 @@ module.exports = function () {
           const regex = /\/\*# sourceMappingURL=.* \*\//gi;
           const str = file.contents.toString() ;
           const subst = `/**/`;
-          // The substituted value will be contained in the result variable
           const content = str.replace(regex, subst);
           file.contents = Buffer.from(content || '');
         }
